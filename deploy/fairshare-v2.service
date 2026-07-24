@@ -1,0 +1,17 @@
+[Unit]
+Description=FairShare v2 (Next.js + Supabase)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=ubuntu
+WorkingDirectory=/home/ubuntu/fairshare/web-v2
+# Next.js auto-loads web-v2/.env.local (symlinked to ../.env.local by install-v2.sh).
+# Run the next binary directly (no npm) so the unit has no shell/PM dependency.
+ExecStart=/usr/bin/node /home/ubuntu/fairshare/web-v2/node_modules/next/dist/bin/next start -p 8793
+Restart=on-failure
+RestartSec=3
+
+[Install]
+WantedBy=multi-user.target
