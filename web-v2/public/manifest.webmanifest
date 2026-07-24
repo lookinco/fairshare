@@ -1,0 +1,12 @@
+{
+  "name": "FairShare",
+  "short_name": "FairShare",
+  "description": "Fair group bill splitting by family & age.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f1024",
+  "theme_color": "#0f1024",
+  "icons": [
+    { "src": "/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}

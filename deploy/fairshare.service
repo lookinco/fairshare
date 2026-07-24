@@ -1,0 +1,17 @@
+[Unit]
+Description=FairShare bill-splitter (PWA + receipt-parse API)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=ubuntu
+WorkingDirectory=/home/ubuntu/fairshare
+# OPENAI_API_KEY is read from the bridge .env by lib/receipt.mjs; PORT fixed here.
+Environment=PORT=8792
+ExecStart=/usr/bin/node /home/ubuntu/fairshare/server.mjs
+Restart=on-failure
+RestartSec=3
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,44 @@
+:root {
+  --bg: #0f1024;
+  --card: #1b1d3a;
+  --card-2: #24264a;
+  --ink: #f4f4ff;
+  --muted: #a9abd6;
+  --brand: #7c5cff;
+  --brand-2: #ff6ec7;
+  --good: #33d69f;
+  --bad: #ff6b6b;
+  --radius: 18px;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  background: radial-gradient(1200px 600px at 20% -10%, #2a1e5c 0%, var(--bg) 55%);
+  color: var(--ink);
+  font: 16px/1.5 ui-rounded, "SF Pro Rounded", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  min-height: 100dvh;
+}
+a { color: inherit; text-decoration: none; }
+.wrap { max-width: 560px; margin: 0 auto; padding: 20px 16px 96px; }
+.brand { font-weight: 800; font-size: 26px; letter-spacing: -0.5px; }
+.brand span { background: linear-gradient(90deg, var(--brand), var(--brand-2)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.card { background: var(--card); border: 1px solid #ffffff14; border-radius: var(--radius); padding: 18px; margin: 14px 0; }
+.muted { color: var(--muted); }
+.row { display: flex; align-items: center; gap: 12px; }
+.spread { justify-content: space-between; }
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; border: none; cursor: pointer;
+  background: linear-gradient(90deg, var(--brand), var(--brand-2)); color: white; font-weight: 700;
+  padding: 14px 18px; border-radius: 999px; font-size: 16px; width: 100%; }
+.btn.ghost { background: var(--card-2); color: var(--ink); }
+.btn:active { transform: translateY(1px); }
+input, select { width: 100%; padding: 13px 14px; border-radius: 12px; border: 1px solid #ffffff22;
+  background: var(--card-2); color: var(--ink); font-size: 16px; }
+label { display: block; font-size: 13px; color: var(--muted); margin: 12px 0 6px; }
+.pos { color: var(--good); font-weight: 700; }
+.neg { color: var(--bad); font-weight: 700; }
+.chip { display: inline-block; padding: 4px 10px; border-radius: 999px; background: var(--card-2); font-size: 13px; }
+.avatar { width: 38px; height: 38px; border-radius: 50%; background: linear-gradient(135deg, var(--brand), var(--brand-2));
+  display: grid; place-items: center; font-weight: 800; }
+h1 { font-size: 22px; margin: 6px 0 2px; }
+h2 { font-size: 16px; margin: 18px 0 6px; }
+.fab { position: fixed; left: 50%; transform: translateX(-50%); bottom: 20px; max-width: 528px; width: calc(100% - 32px); }
